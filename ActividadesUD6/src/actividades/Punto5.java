@@ -19,42 +19,36 @@ public class Punto5 {
 	}
 	
 	public static void conversionBinario(int numero) {
-		
+		int numeroParametro=numero;
 		
 		int cociente=numero;
 		int resto;
 		int cont=1;
-		
-		int[] binarios;
 		String numeroBinario="";
-		int aux=0;
+		
 		
 		for(int i=0;i<=cont;i++) {
 			cociente=cociente/2;
 			
-			binarios=new int[cont];
-			
 			if(cociente!=0) {
 				resto=numero-(2*cociente);
-				binarios[i]=resto;
-				System.out.println("posicion "+i+" :"+binarios[i]);
+				
+				numeroBinario+=resto;
+				
 				numero=cociente;
 				cont++;
 			}
 			if(cociente==1) {
-					binarios[i]=cociente;
-					System.out.println("Arreglo posicion "+i+" : "+binarios[i]);
-				
+					numeroBinario+=cociente;
+					
 			}
-			
-			
-			numeroBinario+=binarios[i]+"-";
-			System.out.println("Binario"+numeroBinario);
-			
-			
 		}
 		
+		StringBuilder builder=new StringBuilder(numeroBinario);
 		
+		String binario=builder.reverse().toString();
+		
+		JOptionPane.showMessageDialog(null, "El número "+numeroParametro+" es en binario: "+binario);
 		
 			
 			
